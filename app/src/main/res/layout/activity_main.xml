@@ -48,6 +48,7 @@
             android:textSize="25dp"/>
 
         <TextView
+            android:id="@+id/puz2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="PUZZLES"

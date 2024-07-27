@@ -26,20 +26,21 @@ public class Winning_page extends AppCompatActivity
         int n = getIntent().getIntExtra("level",0);
         txt3.setText("PUZZLE "+ n +" COMPLETED");
 
-        cnwin.setOnClickListener(new View.OnClickListener() {
+        cnwin.setOnClickListener(new View.OnClickListener()
+        {
             @Override
-            public void onClick(View v)
+            public void onClick(View view)
             {
                 startActivity(new Intent(Winning_page.this, MainActivity2.class).putExtra("level", n));
                 finish();
             }
         });
-
         mmenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Winning_page.this, MainActivity.class).putExtra("level",n));
+                    startActivity(new Intent(Winning_page.this, MainActivity.class).putExtra("level", n));
             }
         });
     }
 }
+
