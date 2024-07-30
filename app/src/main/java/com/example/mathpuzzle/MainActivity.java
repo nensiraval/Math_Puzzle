@@ -15,10 +15,10 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class MainActivity extends AppCompatActivity
-{
-        TextView contne;
-        int n = 0;
+public class MainActivity extends AppCompatActivity {
+    TextView contne, puz2;
+    int n = 0;
+
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,14 +27,21 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         contne = findViewById(R.id.contne);
-        contne.setOnClickListener(new View.OnClickListener()
-        {
+        puz2 = findViewById(R.id.puz2);
+        n = getIntent().getIntExtra("level", 0);
+        contne.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v)
-            {
-                Intent i = new Intent(MainActivity.this,MainActivity2.class);
+            public void onClick(View v) {
+                Intent i = new Intent(MainActivity.this, MainActivity2.class);
                 i.putExtra("level", n);
                 startActivity(i);
+            }
+        });
+
+        puz2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, puzzlenumber.class).putExtra("level", n));
             }
         });
     }

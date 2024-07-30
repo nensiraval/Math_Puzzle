@@ -70,6 +70,7 @@ public class MainActivity2 extends AppCompatActivity {
 
         n = getIntent().getIntExtra("level", 0);
         txt.setText(""+(n+1));
+
         sub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -103,12 +104,3 @@ public class MainActivity2 extends AppCompatActivity {
         });
     }
 }
-
-//        sub.setOnClickListener(new View.OnClickListener() {
-//@Override
-//public void onClick(View v) {
-//        Intent i = new Intent(MainActivity2.this,MainActivity3.class);
-//        i.putExtra("second", "data");
-//        startActivity(i);
-//        }
-//        });
