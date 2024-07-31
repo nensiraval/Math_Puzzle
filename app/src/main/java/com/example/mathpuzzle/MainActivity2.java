@@ -55,6 +55,7 @@ public class MainActivity2 extends AppCompatActivity {
         n0 = findViewById(R.id.n0);
         delete = findViewById(R.id.delete);
         sub = findViewById(R.id.sub);
+        solve = findViewById(R.id.solve);
 
         setbtn(n1,"1");
         setbtn(n2,"2");
@@ -69,8 +70,8 @@ public class MainActivity2 extends AppCompatActivity {
         setbtn(delete, "");
 
         n = getIntent().getIntExtra("level", 0);
-        txt.setText(""+(n+1));
-
+        txt.setText("Puzzle "+(n+1));
+        solve.setBackgroundResource(image[n]);
         sub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

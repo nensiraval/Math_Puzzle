@@ -4,6 +4,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class imageadapter extends BaseAdapter {
@@ -14,12 +15,14 @@ public class imageadapter extends BaseAdapter {
     }
 
     @Override
-    public int getCount() {
+    public int getCount()
+    {
         return 75;
     }
 
     @Override
-    public Object getItem(int position) {
+    public Object getItem(int position)
+    {
         return position;
     }
 
@@ -30,9 +33,9 @@ public class imageadapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        convertView = LayoutInflater.from(puzzlenumber).inflate(R.layout.activity_puzzlenumber, parent, false);
+        convertView = LayoutInflater.from(puzzlenumber).inflate(R.layout.image, parent, false);
         TextView txt4;
-        txt4 = convertView.findViewById(R.id.txt4);
+        txt4 = convertView.findViewById(R.id.imageView);
         txt4.setBackgroundResource(R.drawable.lock);
         return convertView;
     }

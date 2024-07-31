@@ -20,9 +20,9 @@ import androidx.core.view.WindowInsetsCompat;
 public class puzzlenumber extends AppCompatActivity {
     GridView grid;
     TextView txt4;
-    int i = 1;
-    SharedPreferences sp; // get
-    SharedPreferences.Editor edit;  // set
+//    int i = 1;
+//    SharedPreferences sp; // get
+//    SharedPreferences.Editor edit;  // set
     // SharedPreferences
     // key = value
     @SuppressLint("MissingInflatedId")
@@ -34,29 +34,29 @@ public class puzzlenumber extends AppCompatActivity {
 
         grid = findViewById(R.id.grid);
         txt4 = findViewById(R.id.txt4);
-        //txt1 = findViewById(R.id.txt1);
 
         String s = getIntent().getStringExtra("level");
         txt4.setText(s);
         Log.e("--", "onCreate: "+s);
 
-        sp = getSharedPreferences("mydata",MODE_PRIVATE);
-        edit = sp.edit();
+//        sp = getSharedPreferences("mydata",MODE_PRIVATE);
+//        edit = sp.edit();
 
-        i = sp.getInt("value",1);
-        txt4.setText(""+i);
+//        i = sp.getInt("value",1);
+//        txt4.setText(""+i);
 
         imageadapter ad = new imageadapter(puzzlenumber.this);
         grid.setAdapter(ad);
 
         grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+            {
                 Log.e("+++", "onItemClick: " + position);
-                i++;
-                txt4.setText(""+i);
-                edit.putInt("value",i);
-                edit.apply();
+//                i++;
+//                txt4.setText(""+i);
+//                edit.putInt("value",i);
+//                edit.apply();
             }
         });
     }
