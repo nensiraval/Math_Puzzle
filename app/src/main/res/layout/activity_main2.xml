@@ -32,6 +32,7 @@
         android:layout_margin="20dp"/>
 
     <Button
+        android:id="@+id/skip"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="@drawable/skip"

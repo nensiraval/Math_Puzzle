@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class Winning_page extends AppCompatActivity
 {
     TextView txt3,cnwin,mmenu;
+    int n = 0;
     @SuppressLint("MissingInflatedId")
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +24,7 @@ public class Winning_page extends AppCompatActivity
         cnwin = findViewById(R.id.cnwin);
         mmenu = findViewById(R.id.mmenu);
 
-        int n = getIntent().getIntExtra("level",0);
+         n = getIntent().getIntExtra("level",0);
         txt3.setText("PUZZLE "+ n +" COMPLETED");
 
 
@@ -39,7 +40,7 @@ public class Winning_page extends AppCompatActivity
         mmenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    startActivity(new Intent(Winning_page.this, MainActivity.class).putExtra("level", n));
+                    startActivity(new Intent(Winning_page.this, MainActivity.class));
                     finish();
             }
         });

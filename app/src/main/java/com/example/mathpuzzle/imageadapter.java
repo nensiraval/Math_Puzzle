@@ -36,7 +36,18 @@ public class imageadapter extends BaseAdapter {
         convertView = LayoutInflater.from(puzzlenumber).inflate(R.layout.image, parent, false);
         TextView txt4;
         txt4 = convertView.findViewById(R.id.imageView);
-        txt4.setBackgroundResource(R.drawable.lock);
+        if (MainActivity.sp.getString("key"+position,"").equals(MainActivity.com))
+        {
+            txt4.setBackgroundResource(R.drawable.tick);
+            txt4.setText(""+(position+1));
+        } else if (MainActivity.sp.getString("key"+position,"").equals(MainActivity.skip))
+        {
+                txt4.setText(""+(position+1));
+        }
+        else
+        {
+            txt4.setBackgroundResource(R.drawable.lock);
+        }
         return convertView;
     }
 }
