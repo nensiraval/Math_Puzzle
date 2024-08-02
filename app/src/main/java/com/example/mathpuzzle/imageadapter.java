@@ -1,10 +1,12 @@
 package com.example.mathpuzzle;
 
+import static androidx.core.content.ContextCompat.startActivity;
+
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 public class imageadapter extends BaseAdapter {
@@ -33,7 +35,7 @@ public class imageadapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        convertView = LayoutInflater.from(puzzlenumber).inflate(R.layout.image, parent, false);
+        convertView = LayoutInflater.from(puzzlenumber).inflate(R.layout.activity_image, parent, false);
         TextView txt4;
         txt4 = convertView.findViewById(R.id.imageView);
         if (MainActivity.sp.getString("key"+position,"").equals(MainActivity.com))
@@ -48,6 +50,15 @@ public class imageadapter extends BaseAdapter {
         {
             txt4.setBackgroundResource(R.drawable.lock);
         }
+        txt4.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(puzzlenumber, MainActivity2.class);
+                i.putExtra("level", position);
+                puzzlenumber.startActivity(i);
+            }
+        });
         return convertView;
     }
 }

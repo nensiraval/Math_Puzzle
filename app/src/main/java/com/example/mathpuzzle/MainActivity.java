@@ -19,7 +19,6 @@ import androidx.core.view.WindowInsetsCompat;
 public class MainActivity extends AppCompatActivity {
     TextView contne, puz2;
     int n = 0;
-
     static SharedPreferences sp; // get
     static SharedPreferences.Editor edit;  // set    //  SharedPreferences  // key = value
     static  String com = "completed";
@@ -38,7 +37,6 @@ public class MainActivity extends AppCompatActivity {
         contne = findViewById(R.id.contne);
         puz2 = findViewById(R.id.puz2);
 
-//        n = getIntent().getIntExtra("level", 0);
 
         //SharedPreferences
         n = sp.getInt("value", 0);
@@ -59,11 +57,11 @@ public class MainActivity extends AppCompatActivity {
                 Intent i = new Intent(MainActivity.this, MainActivity2.class);
                 i.putExtra("level", n);
                 startActivity(i);
-                finish();
             }
         });
 
-        puz2.setOnClickListener(new View.OnClickListener() {
+        puz2.setOnClickListener(new View.OnClickListener()
+        {
             @Override
             public void onClick(View v)
             {

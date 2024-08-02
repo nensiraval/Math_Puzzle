@@ -20,6 +20,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class puzzlenumber extends AppCompatActivity {
     GridView grid;
     TextView txt4;
+    int n = 0;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,9 +37,10 @@ public class puzzlenumber extends AppCompatActivity {
 
         imageadapter ad = new imageadapter(puzzlenumber.this);
         grid.setAdapter(ad);
-        txt4.setText("Puzzle "+(MainActivity2.n+1));
+        txt4.setText(""+(MainActivity2.n+1));
 
-        grid.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        grid.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id)
             {

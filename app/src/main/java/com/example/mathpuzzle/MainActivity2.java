@@ -90,7 +90,10 @@ public class MainActivity2 extends AppCompatActivity {
         skip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                MainActivity.edit.putString("key"+n,MainActivity.skip);
                 n++;
+                MainActivity.edit.putInt("value", n);
+                MainActivity.edit.apply();
                 txt.setText("Puzzle "+(n+1));
                 solve.setBackgroundResource(image[n]);
             }
