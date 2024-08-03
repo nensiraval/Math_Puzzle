@@ -48,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
                 edit.apply();
             }
         }
-
         contne.setOnClickListener(new View.OnClickListener()
         {
             @Override

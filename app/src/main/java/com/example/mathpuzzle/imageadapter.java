@@ -34,7 +34,8 @@ public class imageadapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(int position, View convertView, ViewGroup parent)
+    {
         convertView = LayoutInflater.from(puzzlenumber).inflate(R.layout.activity_image, parent, false);
         TextView txt4;
         txt4 = convertView.findViewById(R.id.imageView);
@@ -42,7 +43,8 @@ public class imageadapter extends BaseAdapter {
         {
             txt4.setBackgroundResource(R.drawable.tick);
             txt4.setText(""+(position+1));
-        } else if (MainActivity.sp.getString("key"+position,"").equals(MainActivity.skip))
+        }
+        else if (MainActivity.sp.getString("key"+position,"").equals(MainActivity.skip))
         {
                 txt4.setText(""+(position+1));
         }
@@ -53,10 +55,14 @@ public class imageadapter extends BaseAdapter {
         txt4.setOnClickListener(new View.OnClickListener()
         {
             @Override
-            public void onClick(View v) {
-                Intent i = new Intent(puzzlenumber, MainActivity2.class);
-                i.putExtra("level", position);
-                puzzlenumber.startActivity(i);
+            public void onClick(View v)
+            {
+                if (!MainActivity.sp.getString("key"+position,"").equals(MainActivity.lock))
+                {
+                    Intent i = new Intent(puzzlenumber, MainActivity2.class);
+                    i.putExtra("level", position);
+                    puzzlenumber.startActivity(i);
+                }
             }
         });
         return convertView;

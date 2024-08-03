@@ -75,7 +75,8 @@ public class MainActivity2 extends AppCompatActivity {
         solve.setBackgroundResource(image[n]);
         sub.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
                 if(typ.getText().toString().equals(ans[n]))
                 {
                     MainActivity.edit.putString("key"+n,MainActivity.com);
