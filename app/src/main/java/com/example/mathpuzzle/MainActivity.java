@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
         //SharedPreferences
         n = sp.getInt("value", 0);
-        for (int i = 0; i< 76; i++)
+        for(int i = 0; i< 76; i++)
         {
             if (sp.getString("key"+i,"").equals(""))
             {

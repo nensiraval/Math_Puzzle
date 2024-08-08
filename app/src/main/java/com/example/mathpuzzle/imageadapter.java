@@ -43,8 +43,9 @@ public class imageadapter extends BaseAdapter {
         {
             txt4.setBackgroundResource(R.drawable.tick);
             txt4.setText(""+(position+1));
-        }
-        else if (MainActivity.sp.getString("key"+position,"").equals(MainActivity.skip))
+        } else if (MainActivity.sp.getString("key"+position,"").equals(MainActivity.lock) && MainActivity.sp.getString("key"+ (position - 1),"").equals(MainActivity.com)) {
+            txt4.setText(""+(position+1));
+        } else if (MainActivity.sp.getString("key"+position,"").equals(MainActivity.skip))
         {
                 txt4.setText(""+(position+1));
         }
@@ -57,7 +58,7 @@ public class imageadapter extends BaseAdapter {
             @Override
             public void onClick(View v)
             {
-                if (!MainActivity.sp.getString("key"+position,"").equals(MainActivity.lock))
+                if (!MainActivity.sp.getString("key"+position,"").equals(MainActivity.lock) || MainActivity.sp.getString("key"+(position-1),"").equals(MainActivity.com) )
                 {
                     Intent i = new Intent(puzzlenumber, MainActivity2.class);
                     i.putExtra("level", position);
